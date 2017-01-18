@@ -1,69 +1,44 @@
-  
-begin
-  puts "|===============================================|" 
-  puts "|Welcome to Rock Paper Scissors!!!              |"
-  puts "|===============================================|"
+puts "******************************************"
+puts "*  This is the Rock-Paper-Scissors Game  *"
+puts "******************************************"
 
 
-def get_user_input
-  begin 
-    puts "please choose one of the following: R / P / S"
-    user_input = gets.chomp.upcase
-  end while !["R", "P", "S"].include?(user_input) 
+begin  
+  puts "You first to pick : P=Paper, R=Rock, S=Scissors"
+	u_input = gets.chomp.to_s.upcase
+  #電腦取亂數
+	c_choice = ["P","R","S"].sample
 
-  user_input
-end
-
- 
-def git_computer_input  
-  ["R","P","S"].shuffle!.last
-  
-end
-def check_win(user_input, computer_input)
-
-  if (user_input == computer_input)
-    "It's a draw"
-  elsif user_input == "R"
-    if computer_input == "S"
-      "You Win"
-    elsif computer_input == "P"
-      "You Lose"
+  if u_input != c_choice
+    case u_input
+    when "P"
+      puts u_input == "R" ? " You choose Paper , Computer choose Rock, You win" : "You choose Paper ,Computer choose Scissors You lose"
+    when "R"       
+      puts u_input == "S" ? "You choose Rock, Computer Choose Scissors You win" : "You choose Rock, Computer choose Paper You lose"
+    when "S"
+      puts u_input == "P" ? "You choose Scissors, Computer choose Paper you win" : "you choose Scissors ,Computer choose Rock You lose"
+     end
+ else
+    case u_input
+    when "R"
+        puts "you choose Rock, Computer choose Rock, it's draw!"
+    when "P"
+        puts "you choose Paper, Computer choose Paper, it's draw!"
+    when "S"
+        puts "you choose Scissors, Computer choose Scissors, it's draw!"
     end
-  elsif user_input == "P"
-    if computer_input == "R"
-      "You Win"
-    elsif computer_input == "S"
-      "You Lose"
-    end
-  elsif user_input == "S"
-    if computer_input == "P"
-      "You Win"
-    elsif computer_input == "R"
-      "You Lose"
-    end
+
+
+
   end
-end
 
-    def get_input_string(input)
-    gestures = {"R" => "Rock","P" => "Paper","S" => "Scissors" }
-    gestures[input]
-    end
-
-  begin
-    puts "Play Again?: Y / N"
-    continue = gets.chomp.upcase
-  end while !["Y", "N"].include?(continue)
-
-  end while continue == "N"
-
-begin 
-
-  user_input = get_user_input()
-  computer_input = get_computer_input()
-  message = check_win(user_input, computer_input)
-  print_result(user_input, computer_input, message) 
-  continue = continue?
-
-end while continue == "Y"
+puts"do You want to play gmae(Y/N)"
+palaygmae = gets.chomp.to_s.upcase
 
 
+ end while palaygmae =="Y"
+ 
+ puts "---------------------------------"
+ puts "        Thanks for playig        "
+ puts "          BY Jeffrey             "
+ puts "---------------------------------"
