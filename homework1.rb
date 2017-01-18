@@ -12,11 +12,11 @@ begin
   if u_input != c_choice
     case u_input
     when "P"
-      puts u_input == "R" ? " You choose Paper , Computer choose Rock, You win" : "You choose Paper ,Computer choose Scissors You lose"
+      puts c_choice == "R" ? " You choose Paper , Computer choose Rock, You win" : "You choose Paper ,Computer choose Scissors You lose"
     when "R"       
-      puts u_input == "S" ? "You choose Rock, Computer Choose Scissors You win" : "You choose Rock, Computer choose Paper You lose"
+      puts c_choice == "S" ? "You choose Rock, Computer Choose Scissors You win" : "You choose Rock, Computer choose Paper You lose"
     when "S"
-      puts u_input == "P" ? "You choose Scissors, Computer choose Paper you win" : "you choose Scissors ,Computer choose Rock You lose"
+      puts c_choice == "P" ? "You choose Scissors, Computer choose Paper you win" : "you choose Scissors ,Computer choose Rock You lose"
      end
  else
     case u_input
